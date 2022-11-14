@@ -1,0 +1,92 @@
+.canvas-wrapper {
+    text-align: center;
+}
+
+.center{
+    text-align: center;
+}
+
+.fps-tags {
+    justify-content: left;
+    height: 30px;
+}
+
+main {
+    padding: 20px;
+}
+
+.row {
+    margin-bottom: 20px;
+    
+}
+
+.columncentre {
+    margin-left: 250px;
+    
+}
+
+
+.nav-wrapper {
+    margin: 10px 20px;
+}
+
+.panel .panel-block {
+    align-items: flex-start;
+}
+
+.panel-block.sortable-dragging {
+    background-color: white;
+    border-top: 1px solid #dbdbdb;
+}
+
+.panel .panel-icon {
+    height: 36px;
+    display: flex;
+}
+
+.panel .column.col-title {
+    display: flex;
+    align-items: center;
+}
+
+.panel .column.col-toggle {
+    flex-grow: 0;
+}
+
+.panel .control .columns:not(:last-child) {
+    margin-bottom: -.25rem;
+}
+
+.panel .control label {
+    font-size: 14px;
+}
+
+.panel .control input[type=range].slider {
+    margin: 0.5rem 0;
+}
+
+.alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+
+.right_header {
+    color: #fff;
+    float: right;
+}

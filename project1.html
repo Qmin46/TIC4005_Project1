@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>TIC 4005 Project 1: Image Processing with GPU.js</title>
+  <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+  <link rel="stylesheet" href="css/bulma.min.css">
+  <link rel="stylesheet" href="css/bulma-slider.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <meta charset="utf-8">
+
+</head>
+<body>
+    <section class="hero is-small is-dark is-bold">
+        <div class="hero-body container">
+            <h1 class="title">
+                TIC 4005 Project 1: Image Processing with GPU.js
+            </h1>
+            <h2 class="subtitle">
+                by Lee Qiao Min (A0211426U)
+            </h2>
+        </div>
+    </section>
+
+    <div class="alert">
+       <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+       Click "Allow" to start streaming from your device's camera. Click [x] to close the notification.
+    </div>
+
+ 
+    <main class="container">
+        <div class="columns">
+            <div class="column is-one-third-tablet is-one-quarter-fullhd">
+		    <nav class="panel">
+				<fieldset>
+                       <p class="panel-heading"><b>Control Panel</p></b>
+		              <div style="text-align: left">
+ 		              <label><input type="checkbox" id="blue-filter" /> Blue filter</label><br />
+				    <label><input type="checkbox" id="weird-filter" /> Edge Detection</label><br />
+  			         <label><input type="checkbox" id="gpu-enabled" checked /> GPU enabled</label><br />
+		              </div>
+				</fieldset>
+              </nav>
+            </div>
+         </div>
+                <nav class="panel sortable">
+                    <p class="panel-heading"><b>Video Filters</p></b>
+
+                    <div class="panel-block">
+                        <div class="control">
+                            <div class="columns is-mobile">
+                                <div class="column col-title">
+                                    <h5 class="title is-6">Gaussian Blur (5x5)</h5>
+                                </div>
+                                <div class="column col-toggle">
+                                    <input class="control-filter-toggle button" type="button" value="Off" data-filter-name="gaussianFilter">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label for="slider">Sigma</label>
+                                <input class="control-filter-slider slider is-fullwidth" step="0.05" min="0.05" max="5" value="2" type="range" data-filter-name="gaussianFilter"
+                                    data-param-name="sigma">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-block">
+                        <div class="control">
+                            <div class="columns is-mobile">
+                                <div class="column col-title">
+                                    <h5 class="title is-6">Light Tunnel Effect</h5>
+                                </div>
+                                <div class="column col-toggle">
+                                    <input class="control-filter-toggle button" type="button" value="Off" data-filter-name="lightTunnelFilter">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label for="slider">Radius</label>
+                                <input class="control-filter-slider slider is-fullwidth" step="1" min="50" max="200" value="100" type="range" data-filter-name="lightTunnelFilter"
+                                    data-param-name="radius">
+                            </div>
+                        </div>
+                    </div>
+				 <div class="panel-block">
+                        <div class="control">
+                            <div class="columns is-mobile">
+                                <div class="column col-title">
+                                    <h5 class="title is-6">Embossed Filter</h5>
+                                </div>
+                                <div class="column col-toggle">
+                                    <input class="control-filter-toggle button" type="button" value="Off" data-filter-name="embossedFilter">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+     </main>
+
+ <div class="columncentre">
+                
+    <div class="row canvas-wrapper">
+       <video hidden id="video" width="1024" height="768" playsinline autoplay muted></video>
+       <canvas hidden id="videoCanvas" width="1024" height="768"></canvas>
+    </div>
+
+    <div id="canvas-parent" class="row fps-wrapper">
+      <div class="fps-tags tags has-addons">
+        <span class="tag is-dark">FPS</span>
+        <span id="fps-number" class="tag is-success">0</span>
+      </div>
+</div>
+</div>               
+
+<script src="jgpu-browser.min.js"></script>
+<script src="videosetup.js"></script>
+<script src="ui.js?nocache"></script>
+<script src="state.js?nocache"></script>
+<script src="bulma-slider.js?nocache"></script>
+<script src="kernel1.js?nocache"></script>
+<script src="kernel0.js?nocache"></script>
+<script src="kernel2.js?nocache"></script>
+
+
+</body>
+</html>
